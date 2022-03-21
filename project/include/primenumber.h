@@ -4,10 +4,10 @@
 
 
 
-#ifndef PRIMENUMBER_H
-#define PRIMENUMBER_H
+#ifndef PROJECT_INCLUDE_PRIMENUMBER_H_
+#define PROJECT_INCLUDE_PRIMENUMBER_H_
 
 int prime_number(int number);
 
 
-#endif
+#endif  // PROJECT_INCLUDE_PRIMENUMBER_H_
