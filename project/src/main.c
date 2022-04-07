@@ -12,7 +12,7 @@
 
 int main(int argc, const char** argv) {
     if (argc < 3) {
-        return ERR_ARGS_COUNT;
+	   return ERR_ARGS_COUNT;
     }
     char* end = NULL;
     int test_case = (int) strtol(argv[1], &end, 0);
@@ -37,42 +37,42 @@ int main(int argc, const char** argv) {
             if (argc == 4) {
 		    int base = (int) strtol(data, &end, 0);
 		    if (*end != '\0') {
-		    printf("ERROR! Please, input correct data.\n");
-		    return 0;
+			    printf("ERROR! Please, input correct data.\n");
+			    return 0;
 		    }
 		    int pow = (int) strtol(argv[3], &end, 0);
 		    if (*end != '\0') {
-		    printf("ERROR! Please, input correct data.\n");
-		    return 0;
+			    printf("ERROR! Please, input correct data.\n");
+			    return 0;
 		    }
 		    int res = custom_pow(base, pow);
 		    printf("%i\n", res);
             } else {
 		    return ERR_ARGS_COUNT;
-             }
+            }
 	    break;
          }
          case TST_MOD_IMPL: {
 	      int num = (int) strtol(data, &end, 0);
 		    if (*end != '\0') {
-		    printf("ERROR! Please, input correct data.\n");
-		    return 0;
+			    printf("ERROR! Please, input correct data.\n");
+			    return 0;
 		    }
 	      int res = primality_test(num);
 	      printf("%i\n", res);
 	      break;
          }
 	 case TST_REC_IMPL: {
-		int num = (int) strtol(data, &end, 0);
-		    if (*end != '\0') {
-		    printf("ERROR! Please, input correct data.\n");
-		    return 0;
-		    }
+	      int num = (int) strtol(data, &end, 0);
+	      if (*end != '\0') {
+		      printf("ERROR! Please, input correct data.\n");
+		      return 0;
+	      }
 	      print_numbers(num);
 	      break;
-			    }
-        default: {
-            return ERR_WRONG_FLG;
-        }
+	 }
+         default: {
+	      return ERR_WRONG_FLG;
+         }
     }
 }
