@@ -5,15 +5,15 @@ HDRS_DIR = project/include
 SRCS = \
        project/src/main.c \
        project/src/utils.c \
-       project/src/primenumber.c\
-       project/src/rec.c
+       project/src/primality_test.c\
+       project/src/print_numbers.c
 
 .PHONY: all build rebuild check test clean
 
 all: clean check test
 
 $(TARGET): $(SRCS)
-	$(CC) -Wpedantic -Wall -Wextra -Werror -I $(HDRS_DIR) -o $(TARGET) $(CFLAGS) $(SRCS)
+	$(CC) -lm -Wpedantic -Wall -Wextra -Werror -I $(HDRS_DIR) -o $(TARGET) $(CFLAGS) $(SRCS)
 
 build: $(TARGET)
 
